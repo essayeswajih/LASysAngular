@@ -21,7 +21,7 @@
 }
 :root {
     --primary-color: #ff3b30;      /* Vibrant red */
-    --secondary-color: #d32f2f;    /* Darker red */
+    --background-secondary-color: #3b3a3a13;    /* Darker red */
     --background-color: #121212;   /* Dark background */
     --surface-color: #1c1c1c;      /* Slightly lighter black */
     --text-primary-color: #ffffff; /* White for text */
@@ -39,6 +39,20 @@
     --bs-danger: #dc3545;       /* Red for errors or danger elements */
     --bs-light: #f8f9fa;        /* Light color (background) */
     --bs-dark: #343a40;         /* Dark color (text or background) */
+}
+.backgroundColor{
+    background-color: var(--background-color);
+}
+.sbackgroundColor{
+    background-color: var(--background-secondary-color);
+}
+.p-5{
+    padding: 5px;
+    border:1px solid var(--bs-light);
+}
+.m-10{
+    margin: 10px;
+    border:1px solid var(--bs-light);
 }
 body {
     background-color: var(--background-color);
