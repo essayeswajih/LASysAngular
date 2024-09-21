@@ -29,6 +29,29 @@
     --accent-color: #ff6b6b;       /* Lighter red accent */
     --border-color: #333333;       /* Dark border */
     --hover-color: #ff5252;        /* Hover effect for buttons or links */
+    --geenSucc:rgba(90, 231, 90, 0.4);
+    --redFailed:rgba(239, 22, 22, 0.4);
+    --gray:#e0dada90;
+    --blue:rgba(75, 192, 192, 0.4);
+    --yellow:rgba(255, 207, 86, 0.4);
+}
+.text_center{
+    text-align: center;
+}
+.geenSucc{
+    color: var(--geenSucc) !important;
+}
+.redFailed{
+    color: var(--redFailed) !important;
+}
+.gray{
+    color: var(--gray) !important;
+}
+.blue{
+    color: var(--blue) !important;
+}
+.yellow{
+    color: var(--yellow) !important;
 }
 :root {
     --bs-primary: #ff3b30;      /* Red (for primary buttons, links, etc.) */

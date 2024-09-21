@@ -17,18 +17,84 @@
         </aside>
         <main class="col-sm-9">
             <div class="parent">
-                <div class="div1"> requests </div>
-                <div class="div2"> total request | failed request</div>
-                <div class="div3"> 2xx Status code </div>
-                <div class="div4"> 3xx Status code </div>
-                <div class="div5"> 4xx Status code </div>
-                <div class="div6"> 5xx Status code </div>
-                <div class="div7"> Top Paths </div>
-                <div class="div8"> Top Status Code</div>
-                <div class="div9"> Top Top Client IPs</div>
+                <div class="div1">
+                    <div class="chart-container">
+                            <canvas id="Requests"></canvas>
+                    </div>
+                </div>
+                <div class="div2"> 
+                    <div class="row">
+                        <div class="wow fadeIn" data-wow-delay="0.1s">
+                            <p class="mb-2 text_center">Total requests</p>
+                            <h1 class="display-5 mb-0 gray text_center" data-toggle="counter-up"[countUp]="totalRequests" [options]="opts" (complete)="doThisOnComplete()">0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="div2_1">
+                    <div class="row">
+                        <div class="wow fadeIn" data-wow-delay="0.1s">
+                            <p class="mb-2 text_center">Failed requests</p>
+                            <h1 class="display-5 mb-0 redFailed text_center" data-toggle="counter-up"[countUp]="failedRequests" [options]="opts" (complete)="doThisOnComplete()">0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="div3">
+                    <div class="row">
+                        <div class="wow fadeIn" data-wow-delay="0.1s">
+                            <p class="mb-2 text_center">2xx Status code</p>
+                            <h1 class="display-5 mb-0 text_center geenSucc" data-toggle="counter-up"[countUp]="totalRequests" [options]="opts" (complete)="doThisOnComplete()">0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="div4">
+                    <div class="row">
+                        <div class="wow fadeIn" data-wow-delay="0.1s">
+                            <p class="mb-2 text_center">3xx Status code</p>
+                            <h1 class="display-5 mb-0 blue text_center" data-toggle="counter-up"[countUp]="totalRequests" [options]="opts" (complete)="doThisOnComplete()">0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="div5">
+                    <div class="row">
+                        <div class="wow fadeIn" data-wow-delay="0.1s">
+                            <p class="mb-2 text_center">4xx Status code</p>
+                            <h1 class="display-5 mb-0 yellow text_center" data-toggle="counter-up"[countUp]="totalRequests" [options]="opts" (complete)="doThisOnComplete()">0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="div6">
+                    <div class="row">
+                        <div class="wow fadeIn" data-wow-delay="0.1s">
+                            <p class="mb-2 text_center">5xx Status code</p>
+                            <h1 class="display-5 mb-0 redFailed text_center" data-toggle="counter-up"[countUp]="totalRequests" [options]="opts" (complete)="doThisOnComplete()">0</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="div7">
+                    <div class="chart-container">
+                        <canvas id="TopPaths"></canvas>
+                    </div>
+                </div>
+                <div class="div8">
+                    <div class="chart-container">
+                        <canvas id="TopStatus"></canvas>
+                    </div>
+                </div>
+                <div class="div9">
+                    <div class="chart-container">
+                        <canvas id="topClientIps"></canvas>
+                    </div>
+                </div>
                 <div class="div10"> Top Protocols</div>
                 <div class="div11"> Top Top HTTP Methods</div>
-                <div class="div12"> Top Users</div>
+                <div class="div12"> Top Users                    <div class="row">
+                    <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                        <p class="mb-2">total request</p>
+                        <h1 class="display-5 mb-0" data-toggle="counter-up">
+                            <count-up [count]="5" [duration]="20"></count-up>
+                        </h1>
+                    </div>
+                </div></div>
                 </div> 
         </main>
     </div>
