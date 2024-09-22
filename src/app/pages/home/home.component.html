@@ -85,16 +85,21 @@
                         <canvas id="topClientIps"></canvas>
                     </div>
                 </div>
-                <div class="div10"> Top Protocols</div>
-                <div class="div11"> Top Top HTTP Methods</div>
-                <div class="div12"> Top Users                    <div class="row">
-                    <div class="col-lg-3 col-md-6 wow fadeIn" data-wow-delay="0.1s">
-                        <p class="mb-2">total request</p>
-                        <h1 class="display-5 mb-0" data-toggle="counter-up">
-                            <count-up [count]="5" [duration]="20"></count-up>
-                        </h1>
+                <div class="div10">
+                    <div class="chart-container">
+                        <canvas id="topProtocols"></canvas>
                     </div>
-                </div></div>
+                </div>
+                <div class="div11">
+                    <div class="chart-container">
+                        <canvas id="TopHttpMethods"></canvas>
+                    </div>
+                </div>
+                <div class="div12">
+                    <div class="chart-container">
+                        <canvas id="TopUsers"></canvas>
+                    </div>
+                </div>
                 </div> 
         </main>
     </div>

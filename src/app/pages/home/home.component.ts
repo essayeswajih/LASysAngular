@@ -112,7 +112,7 @@ export class HomeComponent implements OnInit {
     type: "bar",
 
     data:{
-      labels: ["/", "/direct/inbox/", "/feed/", "/profile"],
+      labels: ["/", "/direct/inbox/", "/lgoin/", "/profile"],
       datasets: [
           {
               label: "Top Paths",
@@ -140,7 +140,97 @@ export class HomeComponent implements OnInit {
       labels: ["127.0.0.1"],
       datasets: [
           {
-              label: "top Client Ips",
+              label: "Top Client Ips",
+              backgroundColor: [
+                'rgba(90, 231, 90, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(90, 231, 90, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(255,99,132,1)',
+            ],
+              borderWidth: 1,
+              data: [235, 9, 80, 60],
+          }
+      ]
+    },
+    options:{
+      aspectRatio:1,
+      indexAxis: 'y',
+    }
+  };
+  topProtocolsConfig:any ={
+    type: "bar",
+
+    data:{
+      labels: ["HTTP/1.1"],
+      datasets: [
+          {
+              label: "Top Protocols",
+              backgroundColor: [
+                'rgba(90, 231, 90, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(90, 231, 90, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(255,99,132,1)',
+            ],
+              borderWidth: 1,
+              data: [235],
+          }
+      ]
+    },
+    options:{
+      aspectRatio:1,
+      indexAxis: 'y',
+    }
+  };
+  TopHttpMethodsConfig:any ={
+    type: "bar",
+
+    data:{
+      labels: ["GET","POST"],
+      datasets: [
+          {
+              label: "Top HTTP Methods",
+              backgroundColor: [
+                'rgba(90, 231, 90, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(255, 99, 132, 0.2)',
+            ],
+            borderColor: [
+                'rgba(90, 231, 90, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(255,99,132,1)',
+            ],
+              borderWidth: 1,
+              data: [235,80],
+          }
+      ]
+    },
+    options:{
+      aspectRatio:1,
+      indexAxis: 'y',
+    }
+  };
+  TopUsersConfig:any ={
+    type: "bar",
+
+    data:{
+      labels: ["-"],
+      datasets: [
+          {
+              label: "Top Users",
               backgroundColor: [
                 'rgba(90, 231, 90, 0.2)',
                 'rgba(75, 192, 192, 0.2)',
@@ -165,8 +255,11 @@ export class HomeComponent implements OnInit {
   };
   requests:any;
   topPaths:any;
-  topStatusCode:any
-  topClientIps:any
+  topStatusCode:any;
+  topClientIps:any;
+  topProtocols:any;
+  TopHttpMethods:any;
+  TopUsers:any; 
   constructor(private wowService: NgwWowService) {}
   ngOnInit(){
     this.createChart();
@@ -177,8 +270,11 @@ export class HomeComponent implements OnInit {
   }
   createChart(){
     this.requests = new Chart('Requests', this.requestsConfig);
-    this.topStatusCode = new Chart('TopStatus', this.topStatusConfig)
-    this.topPaths = new Chart('TopPaths',this.topPathsConfig)
-    this.topClientIps = new Chart('topClientIps',this.topClientIpsConfig)
+    this.topStatusCode = new Chart('TopStatus', this.topStatusConfig);
+    this.topPaths = new Chart('TopPaths',this.topPathsConfig);
+    this.topClientIps = new Chart('topClientIps',this.topClientIpsConfig);
+    this.topProtocols = new Chart('topProtocols',this.topProtocolsConfig);
+    this.TopHttpMethods = new Chart('TopHttpMethods',this.TopHttpMethodsConfig);
+    this.TopUsers = new Chart('TopUsers',this.TopUsersConfig);
   }
 }
